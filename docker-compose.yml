@@ -1,0 +1,16 @@
+version: '3.3'
+services:
+  apisisac:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: apisisac
+    ports:
+      - '8081:3000'
+  frontsisac:
+    build:
+      context: .
+      dockerfile: Dockerfile.front
+    container_name: frontsisac
+    ports:
+      - '8080:80'

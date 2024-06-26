@@ -1,0 +1,34 @@
+import { User } from 'src/users/user.entity';
+import { Subunidade } from 'src/subunidades/subunidade.entity';
+import { Cor } from 'src/cores/cor.entity';
+import { Modelo } from 'src/modelos/modelo.entity';
+import { VeiculoTipo } from 'src/veiculos-tipos/veiculo-tipo.entity';
+import { VeiculoOficina } from 'src/veiculos-oficinas/veiculo-oficina.entity';
+import { VeiculoPolicial } from 'src/veiculos-policiais/veiculo-policial.entity';
+export declare class Veiculo {
+    id: number;
+    placa: string;
+    placa_especial: string;
+    chassi: string;
+    renavam: string;
+    ano: number;
+    blindado: boolean;
+    organico: boolean;
+    km_inicial: number;
+    km_atual: number;
+    km_troca_oleo: number;
+    km_revisao: number;
+    data_revisao: Date;
+    data_baixa: Date;
+    observacoes: string;
+    cor: Cor;
+    veiculo_tipo: VeiculoTipo;
+    modelo: Modelo;
+    subunidade: Subunidade;
+    veiculos_oficinas: VeiculoOficina[];
+    veiculos_policiais: VeiculoPolicial[];
+    created_by: User;
+    updated_by: User;
+    created_at: Date;
+    updated_at: Date;
+}

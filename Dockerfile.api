@@ -1,0 +1,25 @@
+FROM node:20-alpine
+
+WORKDIR /usr/src/app
+
+ENV SERV_PORT=3000
+
+ENV JWT_SECRET=zEvxx2gTTkbPqVkuCUux6LXpK6k69a9os4AjvIa3Zftw4KJY2b6rqSUIZGnPjt9L
+
+ENV TORM_HOST=172.17.0.2
+
+ENV TORM_PORT=3306
+
+ENV TORM_USER=root
+
+ENV TORM_PASS=12345678
+
+ENV TORM_DB=sisac
+
+COPY /api .
+
+RUN npm ci
+
+EXPOSE 3000/tcp
+
+CMD [ "node", "main.js" ]

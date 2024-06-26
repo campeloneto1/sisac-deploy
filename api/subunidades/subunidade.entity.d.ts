@@ -1,0 +1,30 @@
+import { User } from 'src/users/user.entity';
+import { Cidade } from 'src/cidades/cidade.entity';
+import { Unidade } from 'src/unidades/unidade.entity';
+import { Setor } from 'src/setores/setor.entity';
+import { Armamento } from 'src/armamentos/armamento.entity';
+import { ArmamentoEmprestimo } from 'src/armamentos-emprestimos/armamento-emprestimo.entity';
+import { Policial } from 'src/policiais/policial.entity';
+export declare class Subunidade {
+    id: number;
+    nome: string;
+    abreviatura: string;
+    telefone: string;
+    email: string;
+    rua: string;
+    numero: string;
+    bairro: string;
+    cep: string;
+    cidade: Cidade;
+    unidade: Unidade;
+    comandante: Policial;
+    subcomandante: Policial;
+    setores: Setor[];
+    armamentos: Armamento[];
+    armamentos_emprestimos: ArmamentoEmprestimo[];
+    users: User[];
+    created_by: User;
+    updated_by: User;
+    created_at: Date;
+    updated_at: Date;
+}

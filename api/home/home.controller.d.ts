@@ -1,0 +1,31 @@
+import { HomeService } from './home.service';
+import { Armamentos } from 'src/armamentos/armamento.interface';
+import { VeiculosOficinas } from 'src/veiculos-oficinas/veiculo-oficina.interface';
+import { Veiculos } from 'src/veiculos/veiculo.interface';
+import { VeiculosPoliciais } from 'src/veiculos-policiais/veiculo-policial.interface';
+import { ArmamentosEmprestimos } from 'src/armamentos-emprestimos/armamento-emprestimo.interface';
+import { MateriaisConsumo } from 'src/materiais-consumo/material-consumo.interface';
+import { MateriaisPoliciais } from 'src/materiais-policiais/material-policial.interface';
+import { Materiais } from 'src/materiais/material.interface';
+import { Contratos } from 'src/contratos/contrato.interface';
+export declare class HomeController {
+    private homeService;
+    constructor(homeService: HomeService);
+    armamentosVencendo(req: any, params: any): Promise<Armamentos>;
+    armamentosEmprestimos(req: any, params: any): Promise<ArmamentosEmprestimos>;
+    contratosAcabando(req: any, params: any): Promise<Contratos>;
+    materiaisVencendo(req: any, params: any): Promise<Materiais>;
+    materiaisConsumoVencendo(req: any, params: any): Promise<MateriaisConsumo>;
+    materiaisPoliciaisEmprestados(req: any, params: any): Promise<MateriaisPoliciais>;
+    materiaisConsumoAlerta(req: any, params: any): Promise<MateriaisConsumo>;
+    policiais(req: any, params: any): Promise<number>;
+    atestados(req: any, params: any): Promise<number>;
+    ferias(req: any, params: any): Promise<number>;
+    requeridas(req: any, params: any): Promise<number>;
+    policiaisSetores(req: any, params: any): Promise<number>;
+    policiaisGraduacoes(req: any, params: any): Promise<number>;
+    veiculosManutencao(req: any, params: any): Promise<VeiculosOficinas>;
+    veiculosTrocaOleo(req: any, params: any): Promise<Veiculos>;
+    veiculosRevisao(req: any, params: any): Promise<Veiculos>;
+    veiculosEmprestados(req: any, params: any): Promise<VeiculosPoliciais>;
+}
