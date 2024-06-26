@@ -34,6 +34,9 @@ let ContratosService = class ContratosService {
                 },
                 fiscal: {
                     graduacao: true
+                },
+                contrato_prorrogado: {
+                    contrato_prorrogado: false
                 }
             },
             where: {
@@ -56,6 +59,9 @@ let ContratosService = class ContratosService {
                 },
                 fiscal: {
                     graduacao: true
+                },
+                contrato_prorrogado: {
+                    contrato_prorrogado: false
                 }
             },
             where: {
@@ -146,6 +152,7 @@ let ContratosService = class ContratosService {
         if (object.observacoes_aditivado) {
             data.observacoes_aditivado = object.observacoes_aditivado;
         }
+        data.data_aditivado = new Date();
         await this.contratoRepository.update({ id: id }, { ...data, updated_by: idUser });
         await this.logsService.create({
             object: JSON.stringify(object),

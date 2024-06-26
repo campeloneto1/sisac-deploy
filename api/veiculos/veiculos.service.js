@@ -132,6 +132,7 @@ let VeiculosService = class VeiculosService {
             where: {
                 id: (0, typeorm_2.Not)((0, typeorm_2.In)(ids)),
                 data_baixa: (0, typeorm_2.IsNull)(),
+                nao_disponivel: (0, typeorm_2.IsNull)(),
                 subunidade: {
                     id: params.subunidade
                 }

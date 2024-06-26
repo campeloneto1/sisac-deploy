@@ -117,6 +117,12 @@ __decorate([
     __metadata("design:type", String)
 ], Veiculo.prototype, "observacoes", void 0);
 __decorate([
+    (0, typeorm_1.Column)({
+        nullable: true,
+    }),
+    __metadata("design:type", Boolean)
+], Veiculo.prototype, "nao_disponivel", void 0);
+__decorate([
     (0, typeorm_1.ManyToOne)(() => cor_entity_1.Cor, (cor) => cor.id, {
         eager: true,
         onDelete: 'SET NULL',

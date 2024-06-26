@@ -106,14 +106,25 @@ let SubunidadesService = class SubunidadesService {
         idUser.users_subunidades.forEach((data) => {
             idsSubs.push(data.subunidade.id);
         });
-        return await this.subunidadeRepository.find({
-            where: {
-                unidade: {
-                    id: id,
+        if (idUser.perfil.administrador) {
+            return await this.subunidadeRepository.find({
+                where: {
+                    unidade: {
+                        id: id,
+                    },
                 },
-                id: (0, typeorm_2.In)(idsSubs)
-            },
-        });
+            });
+        }
+        else {
+            return await this.subunidadeRepository.find({
+                where: {
+                    unidade: {
+                        id: id,
+                    },
+                    id: (0, typeorm_2.In)(idsSubs)
+                },
+            });
+        }
     }
 };
 exports.SubunidadesService = SubunidadesService;

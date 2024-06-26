@@ -21,6 +21,7 @@ export declare class Veiculo {
     data_revisao: Date;
     data_baixa: Date;
     observacoes: string;
+    nao_disponivel: boolean;
     cor: Cor;
     veiculo_tipo: VeiculoTipo;
     modelo: Modelo;

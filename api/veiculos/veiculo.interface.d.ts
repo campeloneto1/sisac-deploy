@@ -20,6 +20,7 @@ export interface Veiculo {
     veiculo_tipo: VeiculoTipo;
     modelo: Modelo;
     cor: Cor;
+    nao_disponivel?: boolean;
     observacoes?: string;
     created_by: User;
     updated_by: User;

@@ -148,7 +148,7 @@ let PoliciaisService = class PoliciaisService {
         data = { ...object };
         await this.policialRepository.update({ id: id }, { ...data, updated_by: idUser });
         var upuser = false;
-        var user = await this.usersService.wherePol(id);
+        var user = await this.usersService.wherePol2(id);
         if (user) {
             if (object.nome && user.nome != object.nome) {
                 upuser = true;

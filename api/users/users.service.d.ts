@@ -15,6 +15,7 @@ export declare class UsersService {
     index(params: any, idUser: UserInterface): Promise<UsersInterface>;
     find(id: number): Promise<UserInterface | null>;
     wherePol(id: number): Promise<UserInterface | null>;
+    wherePol2(id: number): Promise<UserInterface | null>;
     create(object: UserInterface, idUser: UserInterface): Promise<void>;
     update(id: number, object: UserInterface, idUser: UserInterface): Promise<void>;
     remove(id: number, idUser: UserInterface): Promise<void>;

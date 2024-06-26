@@ -25,6 +25,7 @@ export declare class Contrato {
     numero_porrogacao: number;
     contrato_prorrogado: Contrato;
     porcentagem_aditivado: number;
+    data_aditivado: Date;
     observacoes_aditivado: string;
     contratos_lancamentos: ContratoLancamento[];
     created_by: User;

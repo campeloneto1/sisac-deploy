@@ -161,6 +161,13 @@ __decorate([
 __decorate([
     (0, typeorm_1.Column)({
         nullable: true,
+        type: 'date'
+    }),
+    __metadata("design:type", Date)
+], Contrato.prototype, "data_aditivado", void 0);
+__decorate([
+    (0, typeorm_1.Column)({
+        nullable: true,
         type: 'text'
     }),
     __metadata("design:type", String)

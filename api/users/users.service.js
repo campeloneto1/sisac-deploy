@@ -84,6 +84,13 @@ let UsersService = class UsersService {
                 } }
         });
     }
+    async wherePol2(id) {
+        return await this.usersRepository.findOne({
+            where: { policial: {
+                    id: id
+                } }
+        });
+    }
     async create(object, idUser) {
         object.salt = await this.utilitiesService.generateSalt(10);
         object.password = await this.utilitiesService.hashString(`${object.cpf}${object.salt}`);
