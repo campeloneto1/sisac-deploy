@@ -5,6 +5,17 @@ services:
       context: .
       dockerfile: Dockerfile.api
     container_name: apisisac
+    environment:
+      SERV_PORT: '3000'
+      JWT_SECRET: 'zEvxx2gTTkbPqVkuCUux6LXpK6k69a9os4AjvIa3Zftw4KJY2b6rqSUIZGnPjt9L'
+      TORM_HOST: '10.9.8.59'
+      TORM_PORT: '8082'
+      TORM_USER: 'root'
+      TORM_PASS: '12345678'
+      TORM_DB: 'sisac'
+    volumes:
+      - ./api:/usr/src/app
+    command: sh -c "npm ci && chmod 777 -R /usr/src/app/public && node main.js"
     ports:
       - '8081:3000'
   frontsisac:
@@ -12,5 +23,8 @@ services:
       context: .
       dockerfile: Dockerfile.front
     container_name: frontsisac
+    volumes:
+      - ./front:/usr/share/nginx/html/
+      - ./default.conf:/etc/nginx/conf.d/default.conf
     ports:
       - '8080:80'
