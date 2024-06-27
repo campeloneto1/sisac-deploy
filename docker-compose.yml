@@ -15,7 +15,7 @@ services:
       TORM_DB: 'sisac'
     volumes:
       - ./api:/usr/src/app
-    command: sh -c "npm ci && chmod 777 -R /usr/src/app/public && node main.js"
+    command: sh -c "npm ci && node main.js"
     ports:
       - '8081:3000'
   frontsisac:
