@@ -14,4 +14,5 @@ export declare class PoliciaisPublicacoesService {
     create(object: PolicialPublicacaoInterface, idUser: User): Promise<void>;
     update(id: number, object: PolicialPublicacaoInterface, idUser: User): Promise<void>;
     remove(id: number, idUser: User): Promise<void>;
+    wherePolicial(id: number, idUser: User): Promise<PoliciaisPublicacoesInterface | null>;
 }

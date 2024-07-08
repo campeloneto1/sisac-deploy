@@ -26,7 +26,7 @@ let PoliciaisController = class PoliciaisController {
         return this.policiaisService.disponiveis(params, req.user);
     }
     async find(id, req) {
-        return await this.policiaisService.find(id, req.user);
+        return await this.policiaisService.find2(id, req.user);
     }
     async create(object, req) {
         return await this.policiaisService.create(object, req.user);

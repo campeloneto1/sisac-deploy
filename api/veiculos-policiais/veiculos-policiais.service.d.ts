@@ -19,5 +19,6 @@ export declare class VeiculosPoliciaisService {
     receber(object: any, idUser: User): Promise<void>;
     emprestados(params: any, idUser: User): Promise<VeiculosPoliciaisInterface>;
     emprestado(params: any, idUser: User): Promise<VeiculoPolicialInterface>;
+    wherePolicial(id: number, idUser: User): Promise<VeiculosPoliciaisInterface>;
     relatorio(object: any, idUser: User): Promise<VeiculosPoliciaisInterface>;
 }

@@ -6,6 +6,7 @@ export declare class VeiculosPoliciaisController {
     index(req: any, params: any): Promise<VeiculosPoliciais>;
     emprestados(req: any, params: any): Promise<VeiculosPoliciais>;
     emprestado(req: any, params: any): Promise<VeiculoPolicial>;
+    wherePol(id: number, req: any): Promise<VeiculosPoliciais>;
     find(id: number, req: any): Promise<VeiculoPolicial>;
     create(object: VeiculoPolicial, req: any): Promise<void>;
     update(id: number, object: VeiculoPolicial, req: any): Promise<void>;

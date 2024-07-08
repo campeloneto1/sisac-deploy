@@ -4,6 +4,7 @@ export declare class PoliciaisPublicacoesController {
     private policiaisPublicacoesService;
     constructor(policiaisPublicacoesService: PoliciaisPublicacoesService);
     index(req: any, params: any): Promise<PoliciaisPublicacoes>;
+    wherePol(id: number, req: any): Promise<PoliciaisPublicacoes>;
     find(id: number, req: any): Promise<PolicialPublicacao>;
     create(object: PolicialPublicacao, req: any): Promise<void>;
     update(id: number, object: PolicialPublicacao, req: any): Promise<void>;

@@ -20,5 +20,6 @@ export declare class ArmamentosEmprestimosService {
     remove(id: number, idUser: User): Promise<void>;
     receber(object: any, idUser: User): Promise<void>;
     emprestados(params: any, idUser: User): Promise<ArmamentosEmprestimosInterface>;
+    wherePolicial(id: number, idUser: User): Promise<ArmamentosEmprestimosInterface>;
     relatorio(object: any, idUser: User): Promise<ArmamentoEmprestimoInterface | null>;
 }

@@ -15,4 +15,5 @@ export declare class PoliciaisAtestadosService {
     update(id: number, object: PolicialAtestadoInterface, idUser: User): Promise<void>;
     remove(id: number, idUser: User): Promise<void>;
     quantidade(params: any, idUser: User): Promise<number>;
+    wherePolicial(id: number, idUser: User): Promise<PoliciaisAtestadosInterface | null>;
 }

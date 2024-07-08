@@ -1,2 +1,2 @@
-FROM nginx:latest AS sisac
+FROM nginx:latest
 EXPOSE 80

@@ -28,6 +28,9 @@ let VeiculosPoliciaisController = class VeiculosPoliciaisController {
     async emprestado(req, params) {
         return await this.veiculosPoliciaisService.emprestado(params, req.user);
     }
+    async wherePol(id, req) {
+        return await this.veiculosPoliciaisService.wherePolicial(id, req.user);
+    }
     async find(id, req) {
         return await this.veiculosPoliciaisService.find(id, req.user);
     }
@@ -72,6 +75,14 @@ __decorate([
     __metadata("design:paramtypes", [Object, Object]),
     __metadata("design:returntype", Promise)
 ], VeiculosPoliciaisController.prototype, "emprestado", null);
+__decorate([
+    (0, common_1.Get)(':id/wherepol'),
+    __param(0, (0, common_1.Param)('id')),
+    __param(1, (0, common_1.Request)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number, Object]),
+    __metadata("design:returntype", Promise)
+], VeiculosPoliciaisController.prototype, "wherePol", null);
 __decorate([
     (0, common_1.Get)(':id'),
     __param(0, (0, common_1.Param)('id')),

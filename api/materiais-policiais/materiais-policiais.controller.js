@@ -22,6 +22,9 @@ let MateriaisPoliciaisController = class MateriaisPoliciaisController {
     async index(req, params) {
         return this.materiaisPoliciaisService.index(params, req.user);
     }
+    async wherePol(id, req) {
+        return await this.materiaisPoliciaisService.wherePolicial(id, req.user);
+    }
     async find(id, req) {
         return await this.materiaisPoliciaisService.find(id, req.user);
     }
@@ -50,6 +53,14 @@ __decorate([
     __metadata("design:paramtypes", [Object, Object]),
     __metadata("design:returntype", Promise)
 ], MateriaisPoliciaisController.prototype, "index", null);
+__decorate([
+    (0, common_1.Get)(':id/wherepol'),
+    __param(0, (0, common_1.Param)('id')),
+    __param(1, (0, common_1.Request)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number, Object]),
+    __metadata("design:returntype", Promise)
+], MateriaisPoliciaisController.prototype, "wherePol", null);
 __decorate([
     (0, common_1.Get)(':id'),
     __param(0, (0, common_1.Param)('id')),

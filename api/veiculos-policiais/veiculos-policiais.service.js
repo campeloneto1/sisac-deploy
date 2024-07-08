@@ -159,6 +159,22 @@ let VeiculosPoliciaisService = class VeiculosPoliciaisService {
             }
         });
     }
+    async wherePolicial(id, idUser) {
+        var idsSubs = [];
+        idUser.users_subunidades.forEach((data) => {
+            idsSubs.push(data.subunidade.id);
+        });
+        return await this.veiculoPolicialRository.find({
+            where: {
+                policial: {
+                    id: id,
+                },
+                subunidade: {
+                    id: (0, typeorm_2.In)(idsSubs)
+                }
+            }
+        });
+    }
     async relatorio(object, idUser) {
         var finaldate = new Date(object.data_final);
         finaldate = (0, date_fns_1.addHours)(finaldate, 23);

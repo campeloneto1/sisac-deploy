@@ -167,6 +167,30 @@ let ArmamentosEmprestimosService = class ArmamentosEmprestimosService {
             }
         });
     }
+    async wherePolicial(id, idUser) {
+        var idsSubs = [];
+        idUser.users_subunidades.forEach((data) => {
+            idsSubs.push(data.subunidade.id);
+        });
+        return await this.armamentoEmprestimoRepository.find({
+            where: {
+                policial: {
+                    id: id
+                },
+                subunidade: {
+                    id: (0, typeorm_2.In)(idsSubs)
+                }
+            },
+            relations: {
+                armamentos_emprestimos_itens: {
+                    armamento: {
+                        modelo: true
+                    },
+                    armamento_emprestimo: false
+                }
+            }
+        });
+    }
     async relatorio(object, idUser) {
         var finaldate = new Date(object.data_final);
         finaldate = (0, date_fns_1.addHours)(finaldate, 23);

@@ -4,6 +4,7 @@ export declare class ArmamentosEmprestimosController {
     private armamentosEmprestimosService;
     constructor(armamentosEmprestimosService: ArmamentosEmprestimosService);
     index(req: any, params: any): Promise<ArmamentosEmprestimos>;
+    wherePol(id: number, req: any): Promise<ArmamentosEmprestimos>;
     find(id: number, req: any): Promise<ArmamentoEmprestimo>;
     create(object: ArmamentoEmprestimo, req: any): Promise<void>;
     update(id: number, object: ArmamentoEmprestimo, req: any): Promise<void>;

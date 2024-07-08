@@ -130,6 +130,24 @@ let PoliciaisFeriasService = class PoliciaisFeriasService {
                 }
             } });
     }
+    async wherePolicial(id, idUser) {
+        var idsSubs = [];
+        idUser.users_subunidades.forEach((data) => {
+            idsSubs.push(data.subunidade.id);
+        });
+        return await this.policialFeriasRepository.find({
+            where: {
+                policial: {
+                    id: id,
+                    setor: {
+                        subunidade: {
+                            id: (0, typeorm_2.In)(idsSubs)
+                        }
+                    }
+                }
+            }
+        });
+    }
 };
 exports.PoliciaisFeriasService = PoliciaisFeriasService;
 exports.PoliciaisFeriasService = PoliciaisFeriasService = __decorate([

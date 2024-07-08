@@ -116,6 +116,24 @@ let PoliciaisCursosService = class PoliciaisCursosService {
             user: idUser
         });
     }
+    async wherePolicial(id, idUser) {
+        var idsSubs = [];
+        idUser.users_subunidades.forEach((data) => {
+            idsSubs.push(data.subunidade.id);
+        });
+        return await this.policialCursoRepository.find({
+            where: {
+                policial: {
+                    id: id,
+                    setor: {
+                        subunidade: {
+                            id: (0, typeorm_2.In)(idsSubs)
+                        }
+                    }
+                }
+            }
+        });
+    }
 };
 exports.PoliciaisCursosService = PoliciaisCursosService;
 exports.PoliciaisCursosService = PoliciaisCursosService = __decorate([
