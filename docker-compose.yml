@@ -15,6 +15,7 @@ services:
       TORM_DB: 'sisac'
     volumes:
       - ./api:/usr/src/app
+      - ./main.js:/usr/src/app/main.js
     command: sh -c "npm ci && node main.js"
     ports:
       - '8081:3000'

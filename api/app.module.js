@@ -111,7 +111,7 @@ exports.AppModule = AppModule = __decorate([
                     limit: 30,
                 }]),
             serve_static_1.ServeStaticModule.forRoot({
-                rootPath: (0, path_1.join)(__dirname, '..'),
+                rootPath: (0, path_1.join)(__dirname, './public'), 
             }),
             auth_module_1.AuthModule,
             paises_module_1.PaisesModule,
